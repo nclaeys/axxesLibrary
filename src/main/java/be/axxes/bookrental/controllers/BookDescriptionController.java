@@ -38,7 +38,7 @@ public class BookDescriptionController {
         );
 
         bookDescription.getTags().forEach(a -> {
-                    final Tag tag = tagRepository.findAuthorByName(a.getName());
+                    final Tag tag = tagRepository.findTagByName(a.getName());
                     if (tag == null) {
                         a.setId(tagRepository.save(a).getId());
                     } else {
