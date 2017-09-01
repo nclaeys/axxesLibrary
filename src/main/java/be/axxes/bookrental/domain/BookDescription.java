@@ -15,7 +15,7 @@ public class BookDescription {
     private List<Tag> tags;
     private List<Book> books;
     private String isbn;
-
+    private String url;
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -74,5 +74,13 @@ public class BookDescription {
 
     public void setIsbn(final String isbn) {
         this.isbn = isbn;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(final String url) {
+        this.url = url;
     }
 }

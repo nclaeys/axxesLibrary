@@ -11,6 +11,10 @@ public class Book {
 
     private BookDescription bookdescription;
 
+    public Book(final BookDescription bookdescription) {
+        this.bookdescription = bookdescription;
+    }
+
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
