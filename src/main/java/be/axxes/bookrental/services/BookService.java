@@ -27,7 +27,7 @@ public class BookService {
             LocalDate currentDate = LocalDate.now();
             boolean available = true;
             for (final Rental rental : book.getRentals()) {
-                if (rental.getStart().isBefore(currentDate) && rental.getEnd().isAfter(currentDate)) {
+                if ((rental.getStart().isBefore(currentDate) || rental.getStart().isEqual(currentDate)) && rental.getEnd().isAfter(currentDate)) {
                     available = false;
                     break;
                 }

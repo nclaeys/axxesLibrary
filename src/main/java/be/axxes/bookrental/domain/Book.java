@@ -33,7 +33,7 @@ public class Book {
         this.bookdescription = bookdescription;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "book")
     public List<Rental> getRentals() {
         return rentals;
     }
