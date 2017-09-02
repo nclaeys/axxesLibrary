@@ -23,6 +23,7 @@ public class BookDescriptionController {
     @Autowired
     private BookDescriptionRepository bookDescriptionRepository;
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(path = "/bookDescriptions", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     public void createBookDescription(@RequestBody BookDescription bookDescription) {
