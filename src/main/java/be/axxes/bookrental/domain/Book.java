@@ -3,6 +3,7 @@ package be.axxes.bookrental.domain;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -10,10 +11,7 @@ public class Book {
     private String id;
 
     private BookDescription bookdescription;
-
-    public Book(final BookDescription bookdescription) {
-        this.bookdescription = bookdescription;
-    }
+    private List<Rental> rentals;
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -34,4 +32,14 @@ public class Book {
     public void setBookdescription(final BookDescription bookdescription) {
         this.bookdescription = bookdescription;
     }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "book")
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
+    public void setRentals(final List<Rental> rentals) {
+        this.rentals = rentals;
+    }
+
 }

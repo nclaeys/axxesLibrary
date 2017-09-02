@@ -51,4 +51,7 @@ INSERT into bookdescription_author (bookdescription_id, author_id) VALUES
 ('2','2'),
 ('3','3');
 
-
+INSERT into library_user (id, firstname, lastname, username) VALUES
+('1','tom1', 'detester', 'tdt1'),
+('2','tom2', 'detester', 'tdt2'),
+('3','tom3', 'detester', 'tdt3');
